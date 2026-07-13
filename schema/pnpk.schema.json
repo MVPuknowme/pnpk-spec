@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://mvpuknowme.github.io/pnpk/schema/pnpk.schema.json",
+  "$id": "https://raw.githubusercontent.com/MVPuknowme/pnpk-spec/main/schema/pnpk.schema.json",
   "title": "PNPK Bridge Proof Packet",
   "description": "Draft schema for Patrick Newman Postman Kafka Bridge Packet files. PNPK files are non-executable proof packets.",
   "type": "object",
@@ -25,7 +25,8 @@
         "sentinel_preflight",
         "device_onboarding_preflight",
         "emergency_on_ramp_check",
-        "sandbox_token_simulation"
+        "sandbox_token_simulation",
+        "financial_information_request"
       ]
     },
     "service": {
@@ -71,6 +72,9 @@
       },
       "additionalProperties": true
     },
+    "financial_request": {
+      "$ref": "../extensions/financial-request.schema.json"
+    },
     "execution": {
       "type": "object",
       "required": [
@@ -92,5 +96,17 @@
       "type": "string"
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "packet_type": { "const": "financial_information_request" }
+        }
+      },
+      "then": {
+        "required": ["financial_request"]
+      }
+    }
+  ],
   "additionalProperties": true
 }
