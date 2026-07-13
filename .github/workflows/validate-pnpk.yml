@@ -34,5 +34,14 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Validate PNPK examples
+      - name: Validate approved PNPK examples
         run: node scripts/validate-pnpk.mjs examples
+
+      - name: Prove unverified legal process is rejected
+        shell: bash
+        run: |
+          if node scripts/validate-pnpk.mjs negative-examples/blocked-unverified-legal-process.pnpk; then
+            echo "Expected the unverified legal-process packet to fail validation."
+            exit 1
+          fi
+          echo "Blocked legal-process example was rejected as expected."
