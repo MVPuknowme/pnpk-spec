@@ -1,0 +1,53 @@
+{
+  "pnpk_version": "0.1.0",
+  "packet_type": "financial_information_request",
+  "service": "PNPK Financial Request Extension",
+  "created_at": "2026-07-13T20:55:00Z",
+  "origin": {
+    "creator": "Michael Vincent Patrick / MVPuknowme",
+    "project": "PNPK"
+  },
+  "sentinel": {
+    "decision": "ready",
+    "reason": "Issuing authority, service, jurisdiction, and exemptions review were independently verified.",
+    "operator_approval_required": true
+  },
+  "proof": {
+    "proof_reference": "example-verified-legal-process-review"
+  },
+  "financial_request": {
+    "request_type": "legal_process_review",
+    "jurisdiction": "US-MN",
+    "purpose": "Document legal and compliance review of a fictional court-issued financial records request.",
+    "scope": {
+      "data_types": ["legal_process_metadata", "account_metadata"],
+      "account_reference": "acctref_fictional_legal_001"
+    },
+    "authorization": {
+      "status": "not_applicable"
+    },
+    "legal_process": {
+      "document_present": true,
+      "court_or_agency": "Fictional County District Court",
+      "case_or_reference": "EXAMPLE-2026-CV-0001",
+      "validity_status": "verified",
+      "service_verified": true,
+      "jurisdiction_verified": true,
+      "exemptions_reviewed": true,
+      "notice_status": "provided",
+      "challenge_window_status": "open",
+      "document_hash_reference": "sha256:example-only-not-a-real-document"
+    },
+    "execution_authority": "none",
+    "funds_movement_requested": false,
+    "retrieval_status": "approved_for_read_only_retrieval"
+  },
+  "execution": {
+    "executable": false,
+    "payments_executed": false,
+    "devices_activated": false,
+    "private_data_moved": false,
+    "production_failover_triggered": false
+  },
+  "notes": "Fictional example only. A PNPK review packet never authorizes garnishment, seizure, or transfer."
+}
