@@ -1,0 +1,52 @@
+{
+  "pnpk_version": "0.1.0",
+  "packet_type": "financial_information_request",
+  "service": "PNPK Financial Request Extension",
+  "created_at": "2026-07-13T20:50:00Z",
+  "origin": {
+    "creator": "Michael Vincent Patrick / MVPuknowme",
+    "project": "PNPK"
+  },
+  "sentinel": {
+    "decision": "ready",
+    "reason": "The requesting institution and read-only compliance scope were independently verified.",
+    "operator_approval_required": true
+  },
+  "proof": {
+    "proof_reference": "example-bank-authority-and-scope-reference"
+  },
+  "financial_request": {
+    "request_type": "bank_request",
+    "jurisdiction": "US",
+    "purpose": "Retrieve fraud-evidence metadata for an authenticated bank investigation.",
+    "scope": {
+      "data_types": ["fraud_evidence", "account_metadata"],
+      "date_from": "2026-06-01",
+      "date_to": "2026-07-13",
+      "account_reference": "acctref_example_bank_6b91d2"
+    },
+    "authorization": {
+      "status": "verified",
+      "method_reference": "institution-authority-verification-reference",
+      "granted_at": "2026-07-13T20:48:00Z",
+      "expires_at": "2026-07-14T20:48:00Z",
+      "revocable": true
+    },
+    "legal_process": {
+      "document_present": false,
+      "validity_status": "not_applicable",
+      "exemptions_reviewed": false
+    },
+    "execution_authority": "none",
+    "funds_movement_requested": false,
+    "retrieval_status": "approved_for_read_only_retrieval"
+  },
+  "execution": {
+    "executable": false,
+    "payments_executed": false,
+    "devices_activated": false,
+    "private_data_moved": false,
+    "production_failover_triggered": false
+  },
+  "notes": "The example authorizes limited evidence retrieval only; it does not convey account-control authority."
+}
