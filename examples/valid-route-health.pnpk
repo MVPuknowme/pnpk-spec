@@ -1,0 +1,29 @@
+{
+  "pnpk_version": "0.1.0",
+  "packet_type": "route_health_proof",
+  "service": "SKYGRID Emergency Data On-Ramp",
+  "created_at": "2026-07-13T20:30:00Z",
+  "origin": {
+    "creator": "Michael Vincent Patrick / MVPuknowme",
+    "project": "PNPK / SkyGrid / Aura-Core"
+  },
+  "sentinel": {
+    "decision": "ready",
+    "reason": "Health route returned the expected advisory response.",
+    "operator_approval_required": false
+  },
+  "proof": {
+    "route": "/health.json",
+    "expected_status": 200,
+    "observed_status": 200,
+    "proof_reference": "sandbox-route-health-example"
+  },
+  "execution": {
+    "executable": false,
+    "payments_executed": false,
+    "devices_activated": false,
+    "private_data_moved": false,
+    "production_failover_triggered": false
+  },
+  "notes": "Example only; contains no credentials or private records."
+}
