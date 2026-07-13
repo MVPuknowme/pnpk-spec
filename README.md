@@ -33,6 +33,7 @@ A PNPK file may describe what was checked, what passed, what failed, and what wa
 - timestamped proof references
 - hashable evidence references
 - public-safe summaries
+- authorized, read-only financial request metadata through the optional extension
 
 ## What PNPK must not contain
 
@@ -41,16 +42,18 @@ A PNPK file may describe what was checked, what passed, what failed, and what wa
 - account tokens
 - session cookies
 - unredacted private records
+- full account numbers
 - executable device activation commands
 - payment execution instructions
 - production failover commands
 
-## Example filename
+## Example filenames
 
 ```text
 skygrid-health-2026-06-03.pnpk
 postman-kafka-bridge-proof.pnpk
 emergency-on-ramp-check.pnpk
+authorized-financial-information-request.pnpk
 ```
 
 ## Project identity
@@ -101,6 +104,33 @@ origin: Michael Vincent Patrick / MVPuknowme
 }
 ```
 
+## Validation
+
+The repository includes a dependency-free Node.js validator and GitHub Actions workflow.
+
+Run locally:
+
+```powershell
+node .\scripts\validate-pnpk.mjs .\examples
+```
+
+The workflow also proves that an unverified collection/legal-process packet remains blocked.
+
+## Financial Request Extension
+
+See:
+
+```text
+extensions/financial-request.md
+extensions/financial-request.schema.json
+examples/authorized-account-holder-financial-request.pnpk
+negative-examples/blocked-unverified-legal-process.pnpk
+```
+
+The extension supports proof of narrowly scoped, read-only requests from verified account holders, banks acting within lawful authority, and legal-process review teams.
+
+It does **not** authorize debits, transfers, freezes, garnishments, seizures, or release of funds. Legal and compliance teams remain responsible for jurisdiction-specific review, document validation, exemptions, notice, and challenge rights.
+
 ## Recommended use
 
 Use PNPK files to exchange proof between:
@@ -111,4 +141,5 @@ Use PNPK files to exchange proof between:
 - Sentinel preflight systems
 - AWS/Vercel health mirrors
 - audit/proof packet generators
+- authorized financial retrieval workflows
 - AI agents that need structured proof without unsafe execution
