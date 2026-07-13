@@ -1,0 +1,29 @@
+{
+  "pnpk_version": "0.1.0",
+  "packet_type": "device_onboarding_preflight",
+  "service": "SKYGRID Emergency Data On-Ramp",
+  "created_at": "2026-07-13T20:31:00Z",
+  "origin": {
+    "creator": "Michael Vincent Patrick / MVPuknowme",
+    "project": "PNPK / SkyGrid / Aura-Core"
+  },
+  "sentinel": {
+    "decision": "blocked",
+    "reason": "Explicit device-owner consent and operator approval are missing.",
+    "operator_approval_required": true
+  },
+  "proof": {
+    "route": "/api/stripe/device-link",
+    "expected_status": 200,
+    "observed_status": 200,
+    "proof_reference": "blocked-device-activation-example"
+  },
+  "execution": {
+    "executable": false,
+    "payments_executed": false,
+    "devices_activated": false,
+    "private_data_moved": false,
+    "production_failover_triggered": false
+  },
+  "notes": "A healthy route does not authorize activation."
+}
