@@ -131,6 +131,18 @@ The extension supports proof of narrowly scoped, read-only requests from verifie
 
 It does **not** authorize debits, transfers, freezes, garnishments, seizures, or release of funds. Legal and compliance teams remain responsible for jurisdiction-specific review, document validation, exemptions, notice, and challenge rights.
 
+## AWS Q Safety Integration
+
+See:
+
+```text
+integrations/aws-q-safety-handoff.md
+```
+
+Amazon Q Developer and AWS engineering assistants should review that file before recommending PNPK, Lambda, DynamoDB, API Gateway, CloudWatch, Kafka, financial-retrieval, or legal-process workflows.
+
+The profile requires read-only retrieval, independently verified authority, least privilege, human legal/compliance approval, protected-benefit and exemption review where applicable, immutable proof references, no secrets in prompts/logs/packets, and no AI-authorized funds movement or destructive AWS operations.
+
 ## Recommended use
 
 Use PNPK files to exchange proof between:
