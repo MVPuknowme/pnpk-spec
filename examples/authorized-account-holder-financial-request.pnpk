@@ -1,0 +1,52 @@
+{
+  "pnpk_version": "0.1.0",
+  "packet_type": "financial_information_request",
+  "service": "PNPK Financial Request Extension",
+  "created_at": "2026-07-13T20:45:00Z",
+  "origin": {
+    "creator": "Michael Vincent Patrick / MVPuknowme",
+    "project": "PNPK"
+  },
+  "sentinel": {
+    "decision": "ready",
+    "reason": "Account-holder authorization is verified and the scope is read-only.",
+    "operator_approval_required": true
+  },
+  "proof": {
+    "proof_reference": "example-account-holder-authorization-reference"
+  },
+  "financial_request": {
+    "request_type": "account_holder_request",
+    "jurisdiction": "US-OR",
+    "purpose": "Export the verified account holder's posted transaction history.",
+    "scope": {
+      "data_types": ["transactions"],
+      "date_from": "2026-01-01",
+      "date_to": "2026-06-30",
+      "account_reference": "acctref_example_92f81c"
+    },
+    "authorization": {
+      "status": "verified",
+      "method_reference": "bank-controlled-verification-reference",
+      "granted_at": "2026-07-13T20:44:00Z",
+      "expires_at": "2026-07-14T20:44:00Z",
+      "revocable": true
+    },
+    "legal_process": {
+      "document_present": false,
+      "validity_status": "not_applicable",
+      "exemptions_reviewed": false
+    },
+    "execution_authority": "none",
+    "funds_movement_requested": false,
+    "retrieval_status": "approved_for_read_only_retrieval"
+  },
+  "execution": {
+    "executable": false,
+    "payments_executed": false,
+    "devices_activated": false,
+    "private_data_moved": false,
+    "production_failover_triggered": false
+  },
+  "notes": "Example contains a tokenized account reference only and conveys no authority to move funds."
+}
