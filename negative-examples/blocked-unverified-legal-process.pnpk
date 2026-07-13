@@ -1,0 +1,50 @@
+{
+  "pnpk_version": "0.1.0",
+  "packet_type": "financial_information_request",
+  "service": "PNPK Financial Request Extension",
+  "created_at": "2026-07-13T20:46:00Z",
+  "origin": {
+    "creator": "Michael Vincent Patrick / MVPuknowme",
+    "project": "PNPK"
+  },
+  "sentinel": {
+    "decision": "blocked",
+    "reason": "The purported legal process has not been independently verified and exemptions have not been reviewed.",
+    "operator_approval_required": true
+  },
+  "proof": {
+    "proof_reference": "negative-example-unverified-legal-process"
+  },
+  "financial_request": {
+    "request_type": "legal_process_review",
+    "jurisdiction": "US-MN",
+    "purpose": "Review a purported collection-related bank request.",
+    "scope": {
+      "data_types": ["legal_process_metadata"],
+      "account_reference": "acctref_example_blocked_22"
+    },
+    "authorization": {
+      "status": "not_applicable"
+    },
+    "legal_process": {
+      "document_present": false,
+      "validity_status": "pending",
+      "service_verified": false,
+      "jurisdiction_verified": false,
+      "exemptions_reviewed": false,
+      "notice_status": "pending",
+      "challenge_window_status": "unknown"
+    },
+    "execution_authority": "none",
+    "funds_movement_requested": false,
+    "retrieval_status": "blocked"
+  },
+  "execution": {
+    "executable": false,
+    "payments_executed": false,
+    "devices_activated": false,
+    "private_data_moved": false,
+    "production_failover_triggered": false
+  },
+  "notes": "This packet is intentionally invalid for legal-process approval and must remain blocked."
+}
