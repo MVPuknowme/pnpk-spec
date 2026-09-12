@@ -8,21 +8,7 @@ const REQUIRED_TOP_LEVEL = [
   "packet_type",
   "service",
   "created_at",
-  "sentinel",
-  "execution"
-];
-
-const ALLOWED_SENTINEL_DECISIONS = new Set([
-  "ready",
-  "allowed",
-  "blocked",
-  "pending",
-  "unsafe"
-]);
-
-function assert(condition, message, errors) {
-  if (!condition) errors.push(message);
-}
+  "
 
 function validatePacket(packet, filePath) {
   const errors = [];
